@@ -1,0 +1,3 @@
+import {money} from '../utils/helpers';
+import ProductImage from './ProductImage';
+export default function CartItem({item,onUpdate,onRemove}){const p=item.product;return <div className="cart-item"><div className="thumb"><ProductImage product={p}/></div><div className="cart-main"><b>{p.name}</b><small>{p.brand} · {p.model||p.sku}</small><strong>{money(p.price)}</strong></div><div className="qty"><button onClick={()=>onUpdate(Math.max(1,item.quantity-1))}>−</button><span>{item.quantity}</span><button onClick={()=>onUpdate(item.quantity+1)}>+</button></div><div className="line-total">{money(item.lineTotal)}</div><button className="text-btn danger" onClick={onRemove}>Remove</button></div>}

@@ -1,0 +1,1 @@
+export default function ErrorMessage({message,onRetry}){return <div className="alert error"><span>{message||'Something went wrong.'}</span>{onRetry&&<button className="btn small" onClick={onRetry}>Retry</button>}</div>}

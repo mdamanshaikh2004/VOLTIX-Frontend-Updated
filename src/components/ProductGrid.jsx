@@ -1,0 +1,1 @@
+import ProductCard from './ProductCard';import EmptyState from './EmptyState';export default function ProductGrid({products=[]}){if(!products.length)return <EmptyState title="No products found" text="Try another search or adjust your filters."/>;return <div className="product-grid">{products.map(p=><ProductCard key={p._id} product={p}/>)}</div>}
